@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars */
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    font-family: sans-serif;
+}
+
+#simulator-container {
+    position: relative;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+}
+
+#sky-canvas {
+    display: block; /* Remove extra space below canvas */
+    width: 100%;
+    height: 100%;
+}
+
+.panel {
+    position: absolute;
+    top: 10px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    border-radius: 8px;
+    max-height: calc(100vh - 40px); /* Limit height to prevent overflow */
+    overflow-y: auto; /* Add scroll if content exceeds height */
+    z-index: 10; /* Ensure panels are above the canvas */
+}
+
+#controls-panel {
+    left: 10px;
+    width: 250px; /* Adjust width as needed */
+}
+
+#info-panel {
+    right: 10px;
+    width: 250px; /* Adjust width as needed */
+}
+
+.panel h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 10px;
+}
+
+.control-group {
+    margin-bottom: 15px;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.control-group input[type="number"],
+.control-group input[type="date"],
+.control-group input[type="time"] {
+    width: calc(100% - 12px); /* Adjust for padding */
+    padding: 6px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.toggle-button {
+    position: absolute;
+    top: 10px;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 10;
+    width: auto; /* Override button width */
+}
+
+#toggle-controls {
+    left: 280px; /* Position next to controls panel */
+}
+
+#toggle-info {
+    right: 280px; /* Position next to info panel */
+}
